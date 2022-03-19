@@ -98,3 +98,5 @@ button.addEventListener("click", (e) => {
   total = 0;
   totalAmount.innerHTML = total;
 });
+
+//123
