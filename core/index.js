@@ -1,1 +1,1 @@
-export { Dep, effectWatch } from './reactivity'
+export { Dep, effectWatch, reactive} from './reactivity.js'
