@@ -14,7 +14,7 @@ export class Dep {
     this.notice()
   }
 
-  // 收集依賴
+  // 收集依賴 
   depend(){
     // fn() 為了調用這塊函數
     if (currentEffect) {

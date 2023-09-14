@@ -44,32 +44,10 @@ import {Dep, effectWatch, reactive} from'./core/index.js'
 //   document.querySelector("#app").append(element)
 // })
 
-// 改成更像vue組件
-const App = {
-  //template -> render
-  render(context){
-    effectWatch(() => {  //收集依賴
-      // ui邏輯
-      document.querySelector("#app").textContent = ""
-      const element = document.createElement("div")
-      const text = document.createTextNode("nihao")
-      const text1 = document.createTextNode(context.count) //收集依賴
-      element.append(text)
-      element.append(text1)
-      document.querySelector("#app").append(element)
-    })
-  },
 
-  // 處理數據
-  setup(){
-    const obj = reactive({
-      count:0
-    }) 
-    window.obj = obj
-    return {
-      obj
-    }
-  }
-}
+// App.render(App.setup())
 
-App.render(App.setup())
+import {createApp} from'./core/index.js'
+import App from'./App.js'
+
+createApp(App).mount(document.querySelector("#app"))
